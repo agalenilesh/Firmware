@@ -16,6 +16,7 @@ void func(char* arg)
 int  main() {
 
     int val = 1;
+    char *abcd;
     unsigned int val1 = -1;
     if (val != val1) {
     printf("hello from project3");
