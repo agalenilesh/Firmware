@@ -18,7 +18,7 @@ int  main() {
     int val = 1;
     unsigned int val1 = -1;
     if (val != val1) {
-    printf("hello");
+    printf("hello from project 2");
    }
 
 return  0;
