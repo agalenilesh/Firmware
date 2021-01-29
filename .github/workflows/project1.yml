@@ -13,18 +13,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - run: cat $GITHUB_EVENT_PATH
-    - run: echo ${{ github.event_name }}
-    - run: echo ${{ github.event.action }}
-    - run: env 
     - name: Install dependencies
       run: |
            sudo apt-get install cppcheck 
-           echo "Cppcecheck install sussfully"
-           echo $GITHUB_EVENT_PATH
-           echo $on.push.path
-           echo $on.push.paths
-           
+    - run: mkdir -p temp
+
+    - run: echo hello > temp/world.txt
+
+    - uses: actions/upload-artifact@v2
+      with:
+         name: my-artifact
+         path: temp/world.txt   
+             
     - uses: actions/checkout@v2
     - name: Static analysis using cppcheck
       run:  cppcheck --enable=all  Project1
