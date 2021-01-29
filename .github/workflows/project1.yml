@@ -7,7 +7,7 @@ on:
 
 
 jobs:
-  Static Code analysis:
+  static-Code-analysis:
 
     runs-on: ubuntu-latest
 
