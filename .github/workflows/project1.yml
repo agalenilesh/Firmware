@@ -16,7 +16,10 @@ jobs:
     - name: Install dependencies
       run: |
            sudo apt-get install cppcheck 
+           echo "Cppcecheck install sussfully"
            echo $GITHUB_EVENT_PATH
+           echo $on.push.path
+           echo $on.push.paths
            
     - uses: actions/checkout@v2
     - name: Static analysis using cppcheck
