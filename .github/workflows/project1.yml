@@ -13,6 +13,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - run: cat $GITHUB_EVENT_PATH
+    - run: echo ${{ github.event_name }}
+    - run: echo ${{ github.event.action }}
+    - run: env 
     - name: Install dependencies
       run: |
            sudo apt-get install cppcheck 
