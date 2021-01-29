@@ -4,6 +4,7 @@ on:
   push:
     paths:
     - 'Project1/**'
+    - 'Project2/**'
 
 
 jobs:
