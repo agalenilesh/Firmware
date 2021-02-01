@@ -1,12 +1,10 @@
-name: C/C++ CI
+name: Static analysis of project1
 
 on:
   push:
     paths:
     - 'Project1/**'
-    - 'Project2/**'
-
-
+    
 jobs:
   static-Code-analysis:
 
@@ -16,15 +14,14 @@ jobs:
     - name: Install dependencies
       run: |
            sudo apt-get install cppcheck 
-    - run: mkdir -p temp
-
-    - run: echo hello > temp/world.txt
-
-    - uses: actions/upload-artifact@v2
-      with:
-         name: my-artifact
-         path: temp/world.txt   
-             
+              
     - uses: actions/checkout@v2
     - name: Static analysis using cppcheck
-      run:  cppcheck --enable=all  Project1
+      run:  |
+           cppcheck --enable=all  Project1
+           cppcheck --enable=all --force -q --xml --suppress=missingInclude --output-file=project1.xml  Project1
+           
+    - uses: actions/upload-artifact@v2
+      with:
+         name: Project1report
+         path: project1.xml
