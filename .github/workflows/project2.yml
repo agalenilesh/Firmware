@@ -1,4 +1,4 @@
-name: Static analysis of project2
+name: Static analysis of wearable
 
 on:
   push:
