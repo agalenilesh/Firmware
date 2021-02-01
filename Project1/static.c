@@ -16,6 +16,7 @@ void func(char* arg)
 int  main() {
 
     int val = 1;
+    int temp;
     char *abcd = NULL;
     unsigned int val1 = -1;
     if (val != val1) {
