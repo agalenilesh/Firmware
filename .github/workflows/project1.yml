@@ -4,10 +4,6 @@ on:
   push:
     paths:
     - 'Project1/device/**'
-      
-defaults:
-  run:
-    working-directory: Project1
         
 jobs:
   static-Code-analysis:
@@ -22,10 +18,12 @@ jobs:
     - name: Static analysis using cppcheck
       run:  |
             echo "Executing script files" 
+            cd Project1
             chmod 777 sca.sh
             ./sca.sh
+            cd ../
                       
     - uses: actions/upload-artifact@v2
       with:
          name: Project1report
-         path: report/sca.xml
+         path: Project1/report/sca.xml
