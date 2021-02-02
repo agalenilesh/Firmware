@@ -16,14 +16,14 @@ jobs:
 
     steps:
     - name: Install dependencies
-      run: |
-           sudo apt-get install cppcheck 
+      run:  sudo apt-get install cppcheck 
               
     - uses: actions/checkout@v2
     - name: Static analysis using cppcheck
       run:  |
-           chmod 777 sca.sh
-           ./sca.sh
+            echo "Executing script files" 
+            chmod 777 sca.sh
+            ./sca.sh
                       
     - uses: actions/upload-artifact@v2
       with:
