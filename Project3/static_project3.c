@@ -16,9 +16,10 @@ void func(char* arg)
 int  main() {
 
     int val = 1;
+    char *abcd =  NULL;
     unsigned int val1 = -1;
     if (val != val1) {
-    printf("hello");
+    printf("hello from project3");
    }
 
 return  0;
