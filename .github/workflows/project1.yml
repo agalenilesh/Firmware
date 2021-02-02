@@ -3,8 +3,12 @@ name: Static analysis of Node
 on:
   push:
     paths:
-    - 'Project1/**'
-    
+    - 'Project1/device/**'
+      
+defaults:
+  run:
+    working-directory: Project1
+        
 jobs:
   static-Code-analysis:
 
@@ -18,10 +22,10 @@ jobs:
     - uses: actions/checkout@v2
     - name: Static analysis using cppcheck
       run:  |
-           cppcheck --enable=all  Project1
-           cppcheck --enable=all --force -q --xml --suppress=missingInclude --output-file=project1.xml  Project1
-           
+           chmod 777 sca.sh
+           ./sca.sh
+                      
     - uses: actions/upload-artifact@v2
       with:
          name: Project1report
-         path: project1.xml
+         path: report/sca.xml
