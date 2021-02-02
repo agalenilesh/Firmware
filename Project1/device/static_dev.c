@@ -7,7 +7,7 @@
 void func(char* arg)
 {
   char buf1[10];
-  char buf2[20];
+  char buf2[13];
 
   strncpy(buf1, arg, sizeof(buf2));
 }
