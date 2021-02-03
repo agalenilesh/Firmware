@@ -20,6 +20,7 @@ jobs:
       run:  |
            cppcheck --enable=all  Project2
            cppcheck --enable=all --force -q --xml --suppress=missingInclude --output-file=project2.xml  Project2
+           echo "echo from develop branch"
            
     - uses: actions/upload-artifact@v2
       with:
